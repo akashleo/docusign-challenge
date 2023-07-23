@@ -1,0 +1,27 @@
+.header{
+    text-align: center;
+    font-weight: 600;
+    font-size: larger;
+    padding: 10px;
+}
+
+.filters{
+    margin: 10px;
+    padding: 10px;
+}
+
+.emoji-pad{
+    margin: 10px;
+    font-size: 40px;
+}
+
+.pagination{
+    font-size: 20px;
+    text-align: center;
+    padding: 20px;
+    background-color: blanchedalmond;
+}
+
+.ant-card-body{
+    width: 100% !important;
+}
