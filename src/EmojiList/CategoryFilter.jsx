@@ -10,8 +10,8 @@ const CategoryFilters = () => {
   // Define the options for the Select boxes (Category and Group)
   const categoryOptions = useRecoilValue(emojiCategory);
   const groupOptions = useRecoilValue(emojiGroup);
-  const [category, setCategory] = useState("");
-  const [group, setGroup] = useState("")
+  const [category, setCategory] = useState("Select Category");
+  const [group, setGroup] = useState("Select Group")
   
   const setEmojiData = useSetRecoilState(emojiDataState);
   console.log(categoryOptions, groupOptions);
@@ -22,7 +22,7 @@ const CategoryFilters = () => {
     const cat_list = await fetchEmojiDataByCategory(value);
     setEmojiData(cat_list);
     setCategory(value);
-    setGroup("");
+    setGroup("Select Group");
   };
 
   const handleGroupChange = async (value) => {
@@ -30,17 +30,17 @@ const CategoryFilters = () => {
     const group_list = await fetchEmojiDataByGroup(value);
     setEmojiData(group_list);
     setGroup(value);
-    setCategory("");
+    setCategory("Select Category");
   };
 
   // Handler for the Clear All button
   const handleClearAll = async () => {
     // Implement the logic to clear the selected values of the Select boxes here
     console.log("Clear All clicked");
-    const group_list = await fetchEmojiData();
-    setEmojiData(group_list);
-    setGroup("");
-    setCategory("");
+    const emoli_list = await fetchEmojiData();
+    setEmojiData(emoli_list);
+    setGroup("Select Group");
+    setCategory("Select Category");
   };
 
   return (

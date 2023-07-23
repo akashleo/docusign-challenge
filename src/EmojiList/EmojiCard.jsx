@@ -11,7 +11,7 @@ const EmojiCard = () => {
   useEffect(() => {
     if (emojiData.length > 0) {
       setCardList(emojiData);
-      if (page !== 1) {
+      if (page >= 1) {
         const startIndex = (page - 1) * 10;
         const temp = emojiData?.slice(startIndex, startIndex + 10);
         console.log(temp, startIndex);
@@ -49,10 +49,10 @@ const EmojiCard = () => {
               }
             >
               <p className="category">{name}</p>
-              <p className="unicode">Unicode: {unicode}</p>
-              <p className="unicode">HTML code: {htmlCode}</p>
-              <p className="category">Category: {category}</p>
-              <p className="unicode">Group: {group}</p>
+              <p className="unicode"><b>Unicode:</b> {unicode}</p>
+              <p className="unicode"><b>HTML code:</b>{htmlCode}</p>
+              <p className="category"><b>Category:</b> {category}</p>
+              <p className="unicode"><b>Group:</b> {group}</p>
             </Card>
           </Col>
         );
